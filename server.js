@@ -12,6 +12,7 @@ const calendarRoutes = require('./routes/calendar');
 const schedulesRoutes = require('./routes/schedules');
 const userRoutes = require('./routes/user');
 const groupMeRoutes = require('./routes/groupme');
+const syncRoutes = require('./routes/sync');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -45,6 +46,7 @@ app.use('/api/calendar', calendarRoutes);
 app.use('/api/schedules', schedulesRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/groupme', groupMeRoutes);
+app.use('/api/sync', syncRoutes);
 
 app.use('/api/*', (req, res) => {
   res.status(404).json({ error: 'API route not found' });

@@ -32,17 +32,19 @@ function showSection(name) {
     target.classList.remove('hidden');
 
     // Header updates
-    const titles = { shifts: 'My Work Shifts', groupme: 'GroupMe Chat', settings: 'App Settings' };
+    const titles = { shifts: 'My Work Shifts', groupme: 'GroupMe Chat', settings: 'App Settings', synccheck: 'Sync Check' };
     const subs = {
       shifts: 'Manage your SocialSchedules and sync to Google Calendar.',
       groupme: 'Stay in touch with your coworkers.',
-      settings: 'Manage your preferences and platform connections.'
+      settings: 'Manage your preferences and platform connections.',
+      synccheck: 'Compare SocialSchedules, Google Calendar, and your app — all in one view.'
     };
     document.getElementById('main-title').innerText = titles[name] || 'adBeeWork';
     document.getElementById('main-subtitle').innerText = subs[name] || '';
 
     // Specific logic per section
     if (name === 'groupme') loadGroupMe();
+    if (name === 'synccheck') runSyncCheck();
   }
 }
 
@@ -329,6 +331,108 @@ async function loadHistory() {
         `).join('');
     }
   } catch (err) { }
+}
+
+// ─── Sync Check ──────────────────────────────────────────────────────────────
+
+let lastSyncCheckData = null;
+
+async function runSyncCheck() {
+  if (!isAuthenticated) { showToast('Please sign in first!', 'error'); return; }
+
+  document.getElementById('sync-check-list').innerHTML = '<p class="text-muted">Checking sync status...</p>';
+  document.getElementById('count-synced').textContent = '…';
+  document.getElementById('count-missing').textContent = '…';
+  document.getElementById('count-orphaned').textContent = '…';
+
+  try {
+    const res = await fetch('/api/sync/check');
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(data.error || 'Sync check failed');
+
+    lastSyncCheckData = data;
+    renderSyncCheck(data);
+  } catch (err) {
+    document.getElementById('sync-check-list').innerHTML = `<p style="color: var(--danger)">${err.message}</p>`;
+    showToast(err.message, 'error');
+  }
+}
+
+function renderSyncCheck(data) {
+  document.getElementById('count-synced').textContent = data.total.synced;
+  document.getElementById('count-missing').textContent = data.total.missing;
+  document.getElementById('count-orphaned').textContent = data.total.orphaned;
+
+  const checkedAt = document.getElementById('sync-checked-at');
+  checkedAt.textContent = `Last checked: ${new Date(data.checkedAt).toLocaleTimeString()}`;
+
+  const fixBtn = document.getElementById('fix-all-container');
+  fixBtn.classList.toggle('hidden', data.total.missing === 0);
+
+  const list = document.getElementById('sync-check-list');
+
+  const rows = [
+    ...data.synced.map(s => renderSyncRow('synced', s.shift.title, s.shift.start)),
+    ...data.missing.map(s => renderSyncRow('missing', s.title, s.start)),
+    ...data.orphaned.map(e => renderSyncRow('orphaned', e.title, e.start)),
+  ];
+
+  if (rows.length === 0) {
+    list.innerHTML = '<p class="text-muted" style="text-align:center; padding: 2rem;">Nothing to show — add your iCal URL in Settings first.</p>';
+    return;
+  }
+
+  list.innerHTML = rows.join('');
+}
+
+function renderSyncRow(status, title, startStr) {
+  const d = new Date(startStr);
+  const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  const timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  const badge = {
+    synced: { text: '✅ Synced', color: '#10b981', bg: 'rgba(16,185,129,0.1)' },
+    missing: { text: '⚠️ Missing from GCal', color: '#f59e0b', bg: 'rgba(245,158,11,0.1)' },
+    orphaned: { text: '🗑️ Orphaned in GCal', color: '#ef4444', bg: 'rgba(239,68,68,0.1)' },
+  }[status];
+
+  return `
+    <div style="display:flex; align-items:center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--glass-border);">
+      <span style="padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+        color: ${badge.color}; background: ${badge.bg}; white-space: nowrap;">${badge.text}</span>
+      <div style="flex:1; min-width:0;">
+        <div style="font-weight: 600; font-size: 0.875rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${title}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">${dateStr} at ${timeStr}</div>
+      </div>
+    </div>
+  `;
+}
+
+async function fixMissing() {
+  if (!lastSyncCheckData || lastSyncCheckData.missing.length === 0) return;
+
+  const icalUrl = document.getElementById('ical-url').value.trim();
+  const calendarId = document.getElementById('cal-picker').value || 'primary';
+  const timeZone = document.getElementById('timezone').value;
+  const selectedIds = lastSyncCheckData.missing.map(s => s.id);
+
+  showLoading(`Adding ${selectedIds.length} missing shift(s) to Google Calendar...`);
+  try {
+    const res = await fetch('/api/calendar/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ icalUrl, calendarId, timeZone, selectedIds })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error);
+    showToast(`Added ${data.synced} shift(s)!`, 'success');
+    runSyncCheck(); // Re-check after fix
+  } catch (err) {
+    showToast(err.message, 'error');
+  } finally {
+    hideLoading();
+  }
 }
 
 // ─── UI Helpers ──────────────────────────────────────────────────────────────
