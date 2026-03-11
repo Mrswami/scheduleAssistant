@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "710986096586",
+    "project_id": "scheduleassistant-735d8",
+    "storage_bucket": "scheduleassistant-735d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710986096586:android:4b5423f3bf92f4c235b933",
+        "android_client_info": {
+          "package_name": "com.mrswami.scheduleassistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTSkzzXfELCT5utcJS0IqUjsSAJDFsaaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

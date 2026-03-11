@@ -1,13 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'dart:ui';
+import 'firebase_options.dart';
 import 'screens/availability_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // We'll initialize Firebase once the firebase_options are generated
-  // await Firebase.initializeApp();
   
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Initialize Analytics
+  FirebaseAnalytics.instance.logAppOpen();
+
+  // Handle Flutter framework errors
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+
+  // Handle asynchronous errors not caught by Flutter
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
+
   runApp(
     const ProviderScope(
       child: AdBeeWorkMobile(),
