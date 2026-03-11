@@ -115,40 +115,42 @@ class AvailabilityScreen extends ConsumerWidget {
           ),
           child: Row(
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          preference.dayName,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            preference.dayName,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          preference.isClosed ? 'No shifts' : '${preference.blocks.length} Shift Block',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.5),
-                            fontSize: 12,
+                          const SizedBox(height: 4),
+                          Text(
+                            preference.isClosed ? 'No shifts' : '${preference.blocks.length} Shift Block',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.5),
+                              fontSize: 12,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: preference.blocks.map((block) => _buildShiftBadge(block)).toList(),
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: preference.blocks.map((block) => _buildShiftBadge(block)).toList(),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               if (!preference.isClosed) ...[
                 const SizedBox(height: 20),
