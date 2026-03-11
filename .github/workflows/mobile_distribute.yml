@@ -43,9 +43,10 @@ jobs:
           flutter build apk --debug 
 
       - name: Upload to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
         with:
           appId: ${{ secrets.FIREBASE_ANDROID_APP_ID }}
           serviceCredentialsFileContent: ${{ secrets.HIVE_JSON }}
           groups: testers
           file: mobile/build/app/outputs/flutter-apk/app-debug.apk
+          debug: true
