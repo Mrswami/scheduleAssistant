@@ -28,6 +28,12 @@ jobs:
           cd mobile
           flutter pub get
 
+      - name: Create Placeholder Google Services (if missing)
+        run: |
+          if [ ! -f mobile/android/app/google-services.json ]; then
+            echo '{"project_info":{"project_number":"0","project_id":"placeholder","storage_bucket":"placeholder.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"${{ secrets.FIREBASE_APP_ID_ANDROID }}","android_client_info":{"package_name":"com.mrswami.scheduleassistant"}},"api_key":[{"current_key":"placeholder"}],"services":{"appinvite_service":{"status":1}}}]}' > mobile/android/app/google-services.json
+          fi
+
       - name: Build Android APK (Debug)
         run: |
           cd mobile
