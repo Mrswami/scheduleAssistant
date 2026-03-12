@@ -1,0 +1,426 @@
+﻿Build & Distribute Social Scheduler	Set up job	∩╗┐2026-03-11T23:42:38.9277420Z Current runner version: '2.332.0'
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9305918Z ##[group]Runner Image Provisioner
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9307377Z Hosted Compute Agent
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9308508Z Version: 20260213.493
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9309687Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9310948Z Build Date: 2026-02-13T00:28:41Z
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9312210Z Worker ID: ***df5adda3-1391-4f38-ba32-d9ad337cfd35***
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9313718Z Azure Region: westus3
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9314823Z ##[endgroup]
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9316789Z ##[group]Operating System
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9317959Z Ubuntu
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9318961Z 24.04.3
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9320014Z LTS
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9321014Z ##[endgroup]
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9321978Z ##[group]Runner Image
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9323487Z Image: ubuntu-24.04
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9324609Z Version: 20260302.42.1
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9326251Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9328493Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9329942Z ##[endgroup]
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9332009Z ##[group]GITHUB_TOKEN Permissions
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9334665Z Contents: read
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9335799Z Metadata: read
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9336865Z Packages: read
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9337930Z ##[endgroup]
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9340482Z Secret source: Actions
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9341810Z Prepare workflow directory
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9687567Z Prepare all required actions
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:38.9726507Z Getting action download info
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:39.4121431Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:39.5275594Z Download action repository 'actions/setup-java@v4' (SHA:c1e323688fd81a25caa38c78aa6df2d33d3e20d9)
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:40.5106280Z Download action repository 'subosito/flutter-action@v2' (SHA:fd55f4c5af5b953cc57a2be44cb082c8f6635e8e)
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:41.1482215Z Download action repository 'google-github-actions/auth@v2' (SHA:c200f3691d83b41bf9bbd8638997a462592937ed)
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:41.9811671Z Getting action download info
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:42.1216845Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+Build & Distribute Social Scheduler	Set up job	2026-03-11T23:42:42.3107662Z Complete job name: Build & Distribute Social Scheduler
+Build & Distribute Social Scheduler	Run actions/checkout@v4	∩╗┐2026-03-11T23:42:42.3832220Z ##[group]Run actions/checkout@v4
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3833439Z with:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3833924Z   repository: Mrswami/scheduleAssistant
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3834602Z   token: ***
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3835038Z   ssh-strict: true
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3835476Z   ssh-user: git
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3835925Z   persist-credentials: true
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3836392Z   clean: true
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3836838Z   sparse-checkout-cone-mode: true
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3837327Z   fetch-depth: 1
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3837769Z   fetch-tags: false
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3838210Z   show-progress: true
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3838651Z   lfs: false
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3839078Z   submodules: false
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3839513Z   set-safe-directory: true
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.3840163Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.4928848Z Syncing repository: Mrswami/scheduleAssistant
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.4930950Z ##[group]Getting Git version info
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.4931738Z Working directory is '/home/runner/work/scheduleAssistant/scheduleAssistant'
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.4933132Z [command]/usr/bin/git version
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5000627Z git version 2.53.0
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5027305Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5040881Z Temporarily overriding HOME='/home/runner/work/_temp/f7adeb90-73cd-4dce-a4ff-d9dd8b1d3986' before making global git config changes
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5042907Z Adding repository directory to the temporary git global config as a safe directory
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5053411Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/scheduleAssistant/scheduleAssistant
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5093317Z Deleting the contents of '/home/runner/work/scheduleAssistant/scheduleAssistant'
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5096854Z ##[group]Initializing the repository
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5126032Z [command]/usr/bin/git init /home/runner/work/scheduleAssistant/scheduleAssistant
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5194982Z hint: Using 'master' as the name for the initial branch. This default branch name
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5196418Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5197271Z hint: to use in all of your new repositories, which will suppress this warning,
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5198202Z hint: call:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5198974Z hint:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5199556Z hint: 	git config --global init.defaultBranch <name>
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5200397Z hint:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5201449Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5203128Z hint: 'development'. The just-created branch can be renamed via this command:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5204332Z hint:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5205159Z hint: 	git branch -m <name>
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5206064Z hint:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5207126Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5208767Z Initialized empty Git repository in /home/runner/work/scheduleAssistant/scheduleAssistant/.git/
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5212773Z [command]/usr/bin/git remote add origin https://github.com/Mrswami/scheduleAssistant
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5247006Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5248330Z ##[group]Disabling automatic garbage collection
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5251858Z [command]/usr/bin/git config --local gc.auto 0
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5280671Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5281454Z ##[group]Setting up auth
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5287270Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5319058Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5662339Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5693917Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5923468Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.5954125Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.6206563Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.6241583Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.6243207Z ##[group]Fetching the repository
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:42.6250915Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b4e4209ef86186738d396d85d9904a9b957bdabf:refs/remotes/origin/main
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.3992032Z From https://github.com/Mrswami/scheduleAssistant
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.3993953Z  * [new ref]         b4e4209ef86186738d396d85d9904a9b957bdabf -> origin/main
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4029011Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4030108Z ##[group]Determining the checkout info
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4033447Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4037599Z [command]/usr/bin/git sparse-checkout disable
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4082946Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4112151Z ##[group]Checking out the ref
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4116548Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4328670Z Switched to a new branch 'main'
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4331134Z branch 'main' set up to track 'origin/main'.
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4339394Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4380605Z [command]/usr/bin/git log -1 --format=%H
+Build & Distribute Social Scheduler	Run actions/checkout@v4	2026-03-11T23:42:43.4405977Z b4e4209ef86186738d396d85d9904a9b957bdabf
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	∩╗┐2026-03-11T23:42:43.4671381Z ##[group]Run actions/setup-java@v4
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4671837Z with:
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4672174Z   distribution: zulu
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4672804Z   java-version: 17
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4673189Z   java-package: jdk
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4673565Z   check-latest: false
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4673941Z   server-id: github
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4674313Z   server-username: GITHUB_ACTOR
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4674716Z   server-password: GITHUB_TOKEN
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4675110Z   overwrite-settings: true
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4675486Z   job-status: success
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4675959Z   token: ***
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.4676296Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.6698580Z ##[group]Installed distributions
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.6726891Z Trying to resolve the latest version from remote
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.7888467Z Resolved latest version as 17.0.18+8
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.7889385Z Trying to download...
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:43.7890689Z Downloading Java 17.0.18+8 (Zulu) from https://cdn.azul.com/zulu/bin/zulu17.64.17-ca-crac-jdk17.0.18-linux_x64.tar.gz ...
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:47.8602879Z Extracting Java archive...
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:47.8795220Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1f92a890-b6c3-4143-b6fd-7e861649164a -f /home/runner/work/_temp/ec79bd96-c8f5-4eaa-b6d7-dcfcff3e224c
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5771354Z Java 17.0.18+8 was downloaded
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5772149Z Setting Java 17.0.18+8 as the default
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5787082Z Creating toolchains.xml for JDK version 17 from zulu
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5866135Z Writing to /home/runner/.m2/toolchains.xml
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5866612Z 
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5866891Z Java configuration:
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5867646Z   Distribution: zulu
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5868316Z   Version: 17.0.18+8
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5869148Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5869786Z 
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5871022Z ##[endgroup]
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5888366Z Creating settings.xml with server-id: github
+Build & Distribute Social Scheduler	Run actions/setup-java@v4	2026-03-11T23:42:50.5889210Z Writing to /home/runner/.m2/settings.xml
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	∩╗┐2026-03-11T23:42:50.6212099Z ##[group]Run subosito/flutter-action@v2
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6213086Z with:
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6213654Z   channel: stable
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6214261Z   architecture: X64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6214863Z   cache: false
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6215545Z   pub-cache-path: default
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6216220Z   dry-run: false
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6216814Z   git-source: https://github.com/flutter/flutter.git
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6217281Z env:
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6217695Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6218296Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6218779Z ##[endgroup]
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6322413Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6323233Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6375852Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6376416Z env:
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6376853Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6377527Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6378020Z ##[endgroup]
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6528510Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6529063Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6529506Z [36;1m  -n '' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6529860Z [36;1m  -f '' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6530200Z [36;1m  -a 'X64' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6530545Z [36;1m  -k '' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6530872Z [36;1m  -c '' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6531207Z [36;1m  -l '' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6531565Z [36;1m  -d 'default' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6532031Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6533049Z [36;1m  stable[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6576552Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6577241Z env:
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6577675Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6578271Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.6578760Z ##[endgroup]
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8752113Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8752853Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8753300Z [36;1m  -n '3.41.4' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8753682Z [36;1m  -a 'x64' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8754158Z [36;1m  -c '/opt/hostedtoolcache/flutter/stable-3.41.4-x64' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8754695Z [36;1m  -d '/home/runner/.pub-cache' \[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8755119Z [36;1m  stable[0m
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8803016Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail ***0***
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8803560Z env:
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8803999Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8804600Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:50.8805113Z ##[endgroup]
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:51.0943995Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:51.0945645Z                                  Dload  Upload   Total   Spent    Left  Speed
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:51.0946285Z 
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:51.3637508Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:52.3636385Z   1 1438M    1 22.1M    0     0  82.1M      0  0:00:17 --:--:--  0:00:17 81.9M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:53.3668154Z  15 1438M   15  228M    0     0   179M      0  0:00:08  0:00:01  0:00:07  179M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:54.3637349Z  26 1438M   26  388M    0     0   170M      0  0:00:08  0:00:02  0:00:06  170M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:55.3645266Z  39 1438M   39  569M    0     0   174M      0  0:00:08  0:00:03  0:00:05  174M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:56.3636085Z  54 1438M   54  784M    0     0   183M      0  0:00:07  0:00:04  0:00:03  183M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:57.3636614Z  69 1438M   69 1003M    0     0   190M      0  0:00:07  0:00:05  0:00:02  196M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:58.3639635Z  83 1438M   83 1196M    0     0   190M      0  0:00:07  0:00:06  0:00:01  193M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:58.6270161Z  96 1438M   96 1391M    0     0   191M      0  0:00:07  0:00:07 --:--:--  200M
+Build & Distribute Social Scheduler	Run subosito/flutter-action@v2	2026-03-11T23:42:58.6271611Z 100 1438M  100 1438M    0     0   191M      0  0:00:07  0:00:07 --:--:--  203M
+Build & Distribute Social Scheduler	Get Dependencies	∩╗┐2026-03-11T23:43:49.7100148Z ##[group]Run cd mobile
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7100857Z [36;1mcd mobile[0m
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7101530Z [36;1mflutter pub get[0m
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7150945Z shell: /usr/bin/bash -e ***0***
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7151363Z env:
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7151788Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7152399Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7153193Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.4-x64
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7153703Z   PUB_CACHE: /home/runner/.pub-cache
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:49.7154103Z ##[endgroup]
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:52.8268964Z Resolving dependencies...
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:53.2041138Z Downloading packages...
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4664972Z   _flutterfire_internals 1.3.59 (1.3.67 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4665873Z > characters 1.4.1 (was 1.4.0)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4666586Z   cloud_firestore 5.6.12 (6.1.3 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4667561Z   cloud_firestore_platform_interface 6.6.12 (7.0.7 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4668620Z   cloud_firestore_web 4.4.12 (5.1.3 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4669434Z   firebase_analytics 11.6.0 (12.1.3 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4670446Z   firebase_analytics_platform_interface 4.4.3 (5.0.7 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4671479Z   firebase_analytics_web 0.5.10+16 (0.6.1+3 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4672271Z   firebase_auth 5.7.0 (6.2.0 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4673373Z   firebase_auth_platform_interface 7.7.3 (8.1.7 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4674315Z   firebase_auth_web 5.15.3 (6.1.3 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4675094Z   firebase_core 3.15.2 (4.5.0 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4676182Z   firebase_core_web 2.24.1 (3.5.0 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4676968Z   firebase_crashlytics 4.3.10 (5.0.8 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4677942Z   firebase_crashlytics_platform_interface 3.8.10 (3.8.18 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4678911Z   flutter_riverpod 2.6.1 (3.3.1 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4679697Z > matcher 0.12.19 (was 0.12.17)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4680466Z > material_color_utilities 0.13.0 (was 0.11.1)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4681257Z   meta 1.17.0 (1.18.1 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4681970Z   riverpod 2.6.1 (3.2.1 available)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4682899Z > test_api 0.7.10 (was 0.7.7)
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4683630Z Changed 4 dependencies!
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4684558Z 17 packages have newer versions incompatible with dependency constraints.
+Build & Distribute Social Scheduler	Get Dependencies	2026-03-11T23:43:55.4685628Z Try `flutter pub outdated` for more information.
+Build & Distribute Social Scheduler	Create Google Services JSON	∩╗┐2026-03-11T23:43:55.8236196Z ##[group]Run if [ -n "***
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8236727Z [36;1mif [ -n "***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8237133Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8237528Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8237941Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8238722Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8239117Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8239470Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8239800Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8240167Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8240659Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8241048Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8241490Z [36;1m          ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8241841Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8242188Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8242784Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8243260Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8243607Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8244088Z [36;1m          ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8244445Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8244786Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8245180Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8245550Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8245955Z [36;1m          ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8246306Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8246637Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8246971Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8247307Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8247679Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8248048Z [36;1m***" ]; then[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8248410Z [36;1m  echo '***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8248801Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8249163Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8249563Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8250044Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8250377Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8250727Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8251053Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8251403Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8251884Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8252266Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8253007Z [36;1m          ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8253449Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8253802Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8254173Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8254522Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8254855Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8255324Z [36;1m          ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8255684Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8256030Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8256402Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8256771Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8257164Z [36;1m          ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8257525Z [36;1m        ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8257866Z [36;1m      ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8258194Z [36;1m    ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8258519Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8258879Z [36;1m  ***[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8259273Z [36;1m***' > mobile/android/app/google-services.json[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8259769Z [36;1melse[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8261469Z [36;1m  echo '***"project_info":***"project_number":"0","project_id":"placeholder","storage_bucket":"placeholder.appspot.com"***"client":[***"client_info":***"mobilesdk_app_id":"***","android_client_info":***"package_name":"com.mrswami.scheduleassistant"***"api_key":[***"current_key":"placeholder"***"services":***"appinvite_service":***"status":1***]***' > mobile/android/app/google-services.json[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8263589Z [36;1mfi[0m
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8311806Z shell: /usr/bin/bash -e ***0***
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8312221Z env:
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8312768Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8313443Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8314055Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.4-x64
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8314559Z   PUB_CACHE: /home/runner/.pub-cache
+Build & Distribute Social Scheduler	Create Google Services JSON	2026-03-11T23:43:55.8314957Z ##[endgroup]
+Build & Distribute Social Scheduler	Build Android APK (Debug)	∩╗┐2026-03-11T23:43:55.8414876Z ##[group]Run cd mobile
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8415297Z [36;1mcd mobile[0m
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8415742Z [36;1mflutter build apk --debug [0m
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8459151Z shell: /usr/bin/bash -e ***0***
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8459579Z env:
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8460004Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8460594Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8461197Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.4-x64
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8461739Z   PUB_CACHE: /home/runner/.pub-cache
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:43:55.8462140Z ##[endgroup]
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:48:33.5637208Z Note: Some input files use or override a deprecated API.
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:48:33.5638297Z Note: Recompile with -Xlint:deprecation for details.
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:48:33.5641459Z Running Gradle task 'assembleDebug'...                          
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:38.8328605Z Checking the license for package CMake 3.22.1 in /usr/local/lib/android/sdk/licenses
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:38.8336003Z License for package CMake 3.22.1 accepted.
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:38.8344135Z Preparing "Install CMake 3.22.1 v.3.22.1".
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:40.3318676Z "Install CMake 3.22.1 v.3.22.1" ready.
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:40.3337045Z Installing CMake 3.22.1 in /usr/local/lib/android/sdk/cmake/3.22.1
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:40.3341009Z "Install CMake 3.22.1 v.3.22.1" complete.
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:49:40.4306426Z "Install CMake 3.22.1 v.3.22.1" finished.
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:50:01.9205241Z Running Gradle task 'assembleDebug'...                            365.5s
+Build & Distribute Social Scheduler	Build Android APK (Debug)	2026-03-11T23:50:03.1000299Z Γ£ô Built build/app/outputs/flutter-apk/app-debug.apk
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	∩╗┐2026-03-11T23:50:03.1265762Z ##[group]Run google-github-actions/auth@v2
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1266221Z with:
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1276163Z   credentials_json: ***
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1276558Z   create_credentials_file: true
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1276966Z   export_environment_variables: true
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1277382Z   universe: googleapis.com
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1277759Z   cleanup_credentials: true
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1278140Z   access_token_lifetime: 3600s
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1278640Z   access_token_scopes: https://www.googleapis.com/auth/cloud-platform
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1279180Z   id_token_include_email: false
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1279595Z env:
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1279990Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1280556Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1281131Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.4-x64
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1281636Z   PUB_CACHE: /home/runner/.pub-cache
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.1282030Z ##[endgroup]
+Build & Distribute Social Scheduler	Authenticate to Google Cloud	2026-03-11T23:50:03.2211412Z Created credentials file at "/home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json"
+Build & Distribute Social Scheduler	Setup Firebase CLI	∩╗┐2026-03-11T23:50:03.2330492Z ##[group]Run npm install -g firebase-tools
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2331019Z [36;1mnpm install -g firebase-tools[0m
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2441078Z shell: /usr/bin/bash -e ***0***
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2441525Z env:
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2441962Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2442734Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2443347Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.4-x64
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2444086Z   PUB_CACHE: /home/runner/.pub-cache
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2444852Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2445919Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2446900Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2447680Z   CLOUDSDK_CORE_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2448158Z   CLOUDSDK_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2448613Z   GCLOUD_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2449055Z   GCP_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2449505Z   GOOGLE_CLOUD_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:03.2449934Z ##[endgroup]
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:18.9560825Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:21.6182726Z npm warn deprecated json-ptr@3.1.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:21.7495293Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:24.8726296Z 
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:24.8726995Z added 746 packages in 21s
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:24.8727454Z 
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:24.8727747Z 93 packages are looking for funding
+Build & Distribute Social Scheduler	Setup Firebase CLI	2026-03-11T23:50:24.8728493Z   run `npm fund` for details
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	∩╗┐2026-03-11T23:50:24.9053963Z ##[group]Run firebase appdistribution:distribute mobile/build/app/outputs/flutter-apk/app-debug.apk \
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9054907Z [36;1mfirebase appdistribution:distribute mobile/build/app/outputs/flutter-apk/app-debug.apk \[0m
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9055689Z [36;1m  --app *** \[0m
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9056081Z [36;1m  --groups testers \[0m
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9056469Z [36;1m  --debug[0m
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9106556Z shell: /usr/bin/bash -e ***0***
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9106970Z env:
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9107393Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9107973Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9108548Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.41.4-x64
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9109054Z   PUB_CACHE: /home/runner/.pub-cache
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9109800Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9110842Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9111847Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9112758Z   CLOUDSDK_CORE_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9113249Z   CLOUDSDK_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9113697Z   GCLOUD_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9114131Z   GCP_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9114585Z   GOOGLE_CLOUD_PROJECT: scheduleassistant-735d8
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:24.9115015Z ##[endgroup]
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.3671401Z [2026-03-11T23:50:25.366Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.4620659Z [2026-03-11T23:50:25.461Z] Running auto auth
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.4631925Z i  uploading binary... 
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.4640081Z [2026-03-11T23:50:25.463Z] No OAuth tokens found
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.4643404Z [2026-03-11T23:50:25.464Z] >>> [apiv2][query] POST https://firebaseappdistribution.googleapis.com/upload/v1/projects/710986096586/apps/***/releases:upload [none]
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.4646119Z [2026-03-11T23:50:25.464Z] >>> [apiv2][body] POST https://firebaseappdistribution.googleapis.com/upload/v1/projects/710986096586/apps/***/releases:upload [stream]
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.5161906Z [2026-03-11T23:50:25.515Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:25.5165388Z [2026-03-11T23:50:25.515Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json ***"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000***
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:27.2454124Z [2026-03-11T23:50:27.244Z] <<< [apiv2][status] POST https://firebaseappdistribution.googleapis.com/upload/v1/projects/710986096586/apps/***/releases:upload 403
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:27.2457163Z [2026-03-11T23:50:27.245Z] <<< [apiv2][body] POST https://firebaseappdistribution.googleapis.com/upload/v1/projects/710986096586/apps/***/releases:upload ***"error":***"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"***
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:27.2472346Z 
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:27.2474610Z Error: Failed to upload release. Request to https://firebaseappdistribution.googleapis.com/upload/v1/projects/710986096586/apps/***/releases:upload had HTTP Error: 403, The caller does not have permission
+Build & Distribute Social Scheduler	Upload to Firebase App Distribution	2026-03-11T23:50:27.5217031Z ##[error]Process completed with exit code 1.
+Build & Distribute Social Scheduler	Post Authenticate to Google Cloud	∩╗┐2026-03-11T23:50:27.5311023Z Post job cleanup.
+Build & Distribute Social Scheduler	Post Authenticate to Google Cloud	2026-03-11T23:50:27.6170607Z Removed exported credentials at "/home/runner/work/scheduleAssistant/scheduleAssistant/gha-creds-8339a48be51bee93.json".
+Build & Distribute Social Scheduler	Post Run subosito/flutter-action@v2	∩╗┐2026-03-11T23:50:27.6358220Z Post job cleanup.
+Build & Distribute Social Scheduler	Post Run actions/setup-java@v4	∩╗┐2026-03-11T23:50:27.6446745Z Post job cleanup.
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	∩╗┐2026-03-11T23:50:27.8279727Z Post job cleanup.
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9290478Z [command]/usr/bin/git version
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9327538Z git version 2.53.0
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9375117Z Temporarily overriding HOME='/home/runner/work/_temp/50ee8a39-cba3-4ac3-b4dd-572e1b0f38be' before making global git config changes
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9376876Z Adding repository directory to the temporary git global config as a safe directory
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9389254Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/scheduleAssistant/scheduleAssistant
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9426577Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9462971Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9737121Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9758806Z http.https://github.com/.extraheader
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9772642Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:27.9805110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:28.0048115Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build & Distribute Social Scheduler	Post Run actions/checkout@v4	2026-03-11T23:50:28.0086978Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build & Distribute Social Scheduler	Complete job	∩╗┐2026-03-11T23:50:28.0451445Z Cleaning up orphan processes
+Build & Distribute Social Scheduler	Complete job	2026-03-11T23:50:28.0838504Z Terminate orphan process: pid (2811) (java)
+Build & Distribute Social Scheduler	Complete job	2026-03-11T23:50:28.0892184Z Terminate orphan process: pid (2954) (java)
+Build & Distribute Social Scheduler	Complete job	2026-03-11T23:50:28.0966824Z Terminate orphan process: pid (3242) (java)
+Build & Distribute Social Scheduler	Complete job	2026-03-11T23:50:28.1009748Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-java@v4, google-github-actions/auth@v2. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

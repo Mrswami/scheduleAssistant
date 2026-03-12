@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>adBeeWork</title>
+    <title>Schedule Assistant</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
 
@@ -125,7 +125,7 @@
 <body>
     <div id="status" class="status-container">
         <div class="bee">🐝</div>
-        <div id="status-text" style="font-weight:600; font-size:18px;">adBeeWork</div>
+        <div id="status-text" style="font-weight:600; font-size:18px;">Schedule Assistant</div>
         <p style="font-size: 13px; color: #94a3b8; margin-top: 5px;">Choose your dashboard:</p>
 
         <button id="btn-local" class="btn">Connect Local Dev (3000)</button>
@@ -134,7 +134,7 @@
         <div id="loading-indicator">⚡ Connecting to Cloud...</div>
 
         <div class="footer">
-            <a href="https://ad-bee-work.vercel.app" target="_blank" class="link">🌐 Open Cloud Dashboard in Tab</a>
+            <a href="https://scheduleassistant-735d8.web.app" target="_blank" class="link">🌐 Open Cloud Dashboard in Tab</a>
             <span id="reset-link" class="link" style="cursor:pointer; opacity: 0.5;">🔄 Reset Sidebar</span>
         </div>
     </div>
@@ -143,7 +143,7 @@
 
     <script>
         const LOCAL_URL = 'http://localhost:3000';
-        const PROD_URL = 'https://ad-bee-work.vercel.app';
+        const PROD_URL = 'https://scheduleassistant-735d8.web.app';
 
         const frame = document.getElementById('dashboard-frame');
         const statusD = document.getElementById('status');
@@ -153,7 +153,7 @@
             console.log('🐝 Sidebar: Loading', url);
             loader.style.display = 'block';
             frame.src = url;
-            localStorage.setItem('adbee_last_url', url);
+            localStorage.setItem('sa_last_url', url);
 
             // Safety timeout: If it doesn't load in 3 seconds, just show the frame anyway
             setTimeout(() => statusD.classList.add('hidden'), 3500);
@@ -162,19 +162,19 @@
         document.getElementById('btn-local').onclick = () => loadURL(LOCAL_URL);
         document.getElementById('btn-prod').onclick = () => loadURL(PROD_URL);
         document.getElementById('reset-link').onclick = () => {
-            localStorage.removeItem('adbee_last_url');
+            localStorage.removeItem('sa_last_url');
             location.reload();
         };
 
         // Auto-load if we have a preference
-        const lastUrl = localStorage.getItem('adbee_last_url');
+        const lastUrl = localStorage.getItem('sa_last_url');
         if (lastUrl) {
             loadURL(lastUrl);
         }
 
         // Listen for the app saying "I am ready"
         window.addEventListener('message', (event) => {
-            if (event.data === 'AD_BEE_LOADED') {
+            if (event.data === 'SA_LOADED') {
                 console.log('🐝 Sidebar: Connection Confirmed');
                 statusD.classList.add('hidden');
             }

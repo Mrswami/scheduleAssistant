@@ -2,7 +2,7 @@
  * content.js - Scans for schedules on the page
  */
 
-console.log("%c🐝 adBeeWork Connector: Script injected into page!", "color: #FDBB2D; font-weight: bold; font-size: 14px;");
+console.log("%c🐝 Schedule Assistant Connector: Script injected into page!", "color: #FDBB2D; font-weight: bold; font-size: 14px;");
 
 function findSchedules() {
     console.log("🐝 Scanning for shifts...");

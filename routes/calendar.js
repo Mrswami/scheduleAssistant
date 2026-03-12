@@ -109,7 +109,7 @@ router.post('/sync', requireAuth, async (req, res) => {
     const gmGroupId = process.env.GROUPME_DEFAULT_GROUP_ID; // Optional env for auto-notify
 
     if (gmToken && gmGroupId && summary.synced > 0) {
-      const msg = `🐝 adBeeWork: just synced ${summary.synced} shifts to my Google Calendar!`;
+      const msg = `🐝 Schedule Assistant: just synced ${summary.synced} shifts to my Google Calendar!`;
       await sendMessage(gmToken, gmGroupId, msg).catch(e => console.error('GM Notify Error:', e.message));
     }
 

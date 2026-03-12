@@ -13,7 +13,7 @@
         "https://app.socialschedules.com/*",
         "https://*.adp.com/*",
         "http://localhost:3000/*",
-        "https://ad-bee-work.vercel.app/*"
+        "https://scheduleassistant-735d8.web.app/*"
     ],
     "action": {
         "default_icon": "icon.svg",

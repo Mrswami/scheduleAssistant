@@ -30,13 +30,13 @@ void main() async {
 
   runApp(
     const ProviderScope(
-      child: AdBeeWorkMobile(),
+      child: ScheduleAssistantMobile(),
     ),
   );
 }
 
-class AdBeeWorkMobile extends StatelessWidget {
-  const AdBeeWorkMobile({super.key});
+class ScheduleAssistantMobile extends StatelessWidget {
+  const ScheduleAssistantMobile({super.key});
 
   @override
   Widget build(BuildContext context) {

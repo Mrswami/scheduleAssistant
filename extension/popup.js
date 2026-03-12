@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const rescanLink = document.getElementById('rescan-link');
 
     const LOCAL_URL = 'http://localhost:3000';
-    const PROD_URL = 'https://ad-bee-work.vercel.app';
+    const PROD_URL = 'https://scheduleassistant-735d8.web.app';
 
     async function updateStatus() {
         const data = await chrome.storage.local.get(['lastFoundIcal', 'lastFoundShifts']);
