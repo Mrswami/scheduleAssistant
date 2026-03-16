@@ -1,4 +1,19 @@
 {
+  "functions": [
+    {
+      "source": ".",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        ".env*",
+        "mobile",
+        "extension"
+      ]
+    }
+  ],
   "hosting": {
     "public": "public",
     "ignore": [
@@ -7,6 +22,14 @@
       "**/node_modules/**"
     ],
     "rewrites": [
+      {
+        "source": "/auth/**",
+        "function": "api"
+      },
+      {
+        "source": "/api/**",
+        "function": "api"
+      },
       {
         "source": "**",
         "destination": "/index.html"

@@ -3,10 +3,13 @@ const admin = require('firebase-admin');
 let initialized = false;
 
 function initFirebase() {
-  if (initialized) return;
+  if (initialized || admin.apps.length > 0) {
+    initialized = true;
+    return;
+  }
 
-  const projectId = process.env.FIREBASE_PROJECT_ID;
-  if (!projectId) {
+  const projectId = process.env.FIREBASE_PROJECT_ID || process.env.GCP_PROJECT;
+  if (!projectId && !process.env.FIREBASE_CONFIG) {
     console.warn('Firebase not configured — set FIREBASE_* env vars to enable Firestore profiles.');
     return;
   }
