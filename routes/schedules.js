@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { parseSocialSchedulesFeed } = require('../services/icalParser');
+const { parseShiftFeed } = require('../services/icalParser');
 
 function requireAuth(req, res, next) {
   if (!req.session.tokens) {
@@ -21,7 +21,7 @@ router.get('/', requireAuth, async (req, res) => {
   }
 
   try {
-    const schedules = await parseSocialSchedulesFeed(decodeURIComponent(url));
+    const schedules = await parseShiftFeed(decodeURIComponent(url));
     res.json({ schedules, count: schedules.length });
   } catch (err) {
     console.error('Schedule fetch error:', err.message);

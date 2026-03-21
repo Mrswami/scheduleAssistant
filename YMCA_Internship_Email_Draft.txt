@@ -1,0 +1,29 @@
+Subject: Following up: Internship Inquiry - Jacob Moreno
+
+Hi John,
+
+Thank you for reaching out! It’s been great connecting with you and Gladys. I’ve thoroughly enjoyed my time on the front desk team at TownLake; seeing our mission in action every day has only increased my interest in contributing to our IT and Data operations from a technical perspective.
+
+To answer your questions:
+
+*   **Background & Focus:** I previously attended UT Austin for Digital Media Arts, where I built a foundation in UI/UX systems. Currently, I’ve pivoted my focus toward independent, high-level software engineering and full-stack app development. I’m a firm believer in the **"build-first" philosophy**—I find I gain the most ground by architecting and deploying functional solutions to real-world operational challenges.
+
+*   **The YMCA Prototype & Transition:** I’ve been developing a **YMCA 360 Ecosystem** to address several workflow efficiencies I identified while on the front desk. I’m also aware we’re currently transitioning from SocialSchedules to WhenToWork; I’ve already begun revamping our workflow bridges to handle this migration, ensuring a fluid sync between our new W2W shifts and our broader digital workflows. My platform uses a **Riverpod-managed Flutter frontend** and a **Firebase/Node 20 backend**.
+
+**I have hosted a private mobile-optimized prototype of the platform here: [https://scheduleassistant-735d8.web.app/prototype/](https://scheduleassistant-735d8.web.app/prototype/).** It is best viewed directly on a mobile device to experience the UI/UX firsthand.
+
+*   **Internship Goals:** My goal is to gain practical experience within our data environment. Having seen our workflows from the user side at the front desk, I’m hungry to see how those translate into our broader IT architecture and how I can help optimize those systems.
+
+I am prepared to hop on a quick **Zoom/Virtual demo** to screen-share the prototype, or I can meet you at the Hub at your convenience. I’ve mapped out my availability below based on my current front-desk commitments (my Monday shifts typically start at 5:00 PM):
+
+*   **Monday, March 23:** 9:00 AM – 3:30 PM (Virtual or at the Hub)
+*   **Friday, March 20:** 9:00 AM – 1:00 PM (Virtual Preferred)
+*   **Tuesday, March 24:** 9:00 AM – 3:30 PM
+
+I look forward to hearing from you and discussing how my technical initiative can support the team’s goals!
+
+Best regards,
+
+Jacob Moreno
+Greater Austin YMCA | Front Desk
+[Link to Portfolio/GitHub]

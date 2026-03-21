@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { parseSocialSchedulesFeed } = require('../services/icalParser');
+const { parseShiftFeed } = require('../services/icalParser');
 const { listUpcomingEvents } = require('../services/googleCalendar');
 
 function requireAuth(req, res, next) {
@@ -43,7 +43,7 @@ router.get('/check', requireAuth, async (req, res) => {
     try {
         // Fetch both sources in parallel
         const [shifts, gcalEvents] = await Promise.all([
-            parseSocialSchedulesFeed(icalUrl),
+            parseShiftFeed(icalUrl),
             listUpcomingEvents(req.session.tokens, 50)
         ]);
 

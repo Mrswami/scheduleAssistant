@@ -90,7 +90,7 @@
       <div style="display:flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
         <div>
           <h1 id="main-title">My Work Shifts</h1>
-          <p class="text-muted" id="main-subtitle">Manage your SocialSchedules and sync to Google Calendar.</p>
+          <p class="text-muted" id="main-subtitle">Manage your WhenToWork shifts and sync to Google Calendar.</p>
         </div>
         <div id="header-actions">
           <button class="btn btn-primary" onclick="saveAndFetch()" id="btn-sync-now">
@@ -105,7 +105,7 @@
           <!-- JS rendered cards -->
           <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
             <h2 style="margin-bottom: 1rem;">Welcome to Schedule Assistant</h2>
-            <p class="text-muted" style="max-width: 500px; margin: 0 auto 2rem;">Connect your SocialSchedules iCal feed
+            <p class="text-muted" style="max-width: 500px; margin: 0 auto 2rem;">Connect your WhenToWork iCal feed
               and your shifts will magically appear here, ready for Google Calendar sync.</p>
             <button class="btn btn-secondary" onclick="showSection('settings')">Configure iCal Feed</button>
           </div>
@@ -167,7 +167,7 @@
         <div class="card" style="margin-bottom: 2rem;">
           <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <h3>My Weekly Availability</h3>
-            <span class="badge" style="background: rgba(16,185,129,0.1); color: #22c55e;">SocialSchedules Sync</span>
+            <span class="badge" style="background: rgba(16,185,129,0.1); color: #22c55e;">WhenToWork Sync</span>
           </div>
           <div id="availability-grid-container">
             <!-- Rendered by JS -->
@@ -247,10 +247,10 @@
         <div class="card">
           <h3>Configuration</h3>
           <div class="input-container">
-            <label class="input-label">SocialSchedules iCal URL</label>
-            <input type="url" id="ical-url" class="input-field" placeholder="https://app.socialschedules.com/ical/...">
-            <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.5rem;">SocialSchedules → Menu → Settings →
-              Calendar Sync → Copy Link</p>
+            <label class="input-label">WhenToWork iCal URL</label>
+            <input type="url" id="ical-url" class="input-field" placeholder="https://whentowork.com/cgi-bin/...">
+            <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.5rem;">WhenToWork → Export → 
+              Calendar Sync → Copy iCal URL</p>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">

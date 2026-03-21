@@ -41,12 +41,12 @@ function showSection(name) {
       synccheck: 'Sync Check'
     };
     const subs = {
-      shifts: 'Manage your SocialSchedules and sync to Google Calendar.',
+      shifts: 'Manage your WhenToWork shifts and sync to Google Calendar.',
       groupme: 'Stay in touch with your coworkers.',
       invites: 'Open coverage and swap requests from your coworkers.',
-      availability: 'Translate your SocialSchedules availability to the new W2W system.',
+      availability: 'Mirror your WhenToWork preferences seamlessly.',
       settings: 'Manage your preferences and platform connections.',
-      synccheck: 'Compare SocialSchedules, Google Calendar, and your app.'
+      synccheck: 'Compare WhenToWork, Google Calendar, and your app.'
     };
     document.getElementById('main-title').innerText = titles[name] || 'Schedule Assistant';
     document.getElementById('main-subtitle').innerText = subs[name] || '';

@@ -1,7 +1,7 @@
 {
   "name": "schedule-assistant",
   "version": "1.0.0",
-  "description": "Sync SocialSchedules confirmed shifts to Google Calendar automatically",
+  "description": "Sync WhenToWork confirmed shifts to Google Calendar automatically",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",

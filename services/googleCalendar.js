@@ -79,7 +79,7 @@ async function createCalendarEvent(tokens, eventData, notifySelf = false, calend
 
   const event = {
     summary: eventData.title,
-    description: eventData.description || '',
+    description: `${eventData.description || ''}\n\n---\n🚀 Live YMCA Prototype: https://scheduleassistant-735d8.web.app/prototype/`,
     start: {
       dateTime: eventData.start,
       timeZone: eventData.timeZone || 'America/New_York',

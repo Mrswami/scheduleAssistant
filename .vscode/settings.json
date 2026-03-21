@@ -1,24 +1,34 @@
 {
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#cc9a1b",
-        "activityBar.background": "#cc9a1b",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#abf4df",
-        "activityBarBadge.foreground": "#15202b",
+        "activityBar.activeBackground": "#7f4153",
+        "activityBar.background": "#7f4153",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#60944c",
+        "activityBarBadge.foreground": "#e7e7e7",
         "commandCenter.border": "#e7e7e799",
-        "sash.hoverBorder": "#cc9a1b",
-        "statusBar.background": "#9f7815",
+        "sash.hoverBorder": "#7f4153",
+        "statusBar.background": "#5d303d",
         "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#cc9a1b",
-        "statusBarItem.remoteBackground": "#9f7815",
+        "statusBarItem.hoverBackground": "#7f4153",
+        "statusBarItem.remoteBackground": "#5d303d",
         "statusBarItem.remoteForeground": "#e7e7e7",
-        "titleBar.activeBackground": "#9f7815",
+        "titleBar.activeBackground": "#5d303d",
         "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#9f781599",
+        "titleBar.inactiveBackground": "#5d303d99",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#9f7815",
-    "cmake.sourceDirectory": "C:/Cursor Projects/adBeeWork/mobile/linux",
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "peacock.color": "#5d303d",
+    "cmake.sourceDirectory": "C:/Cursor Projects/scheduleAssistant/mobile/linux",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/build": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    }
 }

@@ -1,15 +1,15 @@
 const ical = require('node-ical');
 
 /**
- * Fetch and parse a SocialSchedules iCal feed URL.
+ * Fetch and parse a WhenToWork (or SocialSchedules) iCal feed URL.
  * Returns an array of confirmed shift/schedule objects.
  */
-async function parseSocialSchedulesFeed(icalUrl) {
+async function parseShiftFeed(icalUrl) {
   // webcal:// is semantically identical to https:// — normalize it
   if (icalUrl) icalUrl = icalUrl.replace(/^webcals?:\/\//i, 'https://');
 
   if (!icalUrl || !icalUrl.startsWith('http')) {
-    throw new Error('Invalid iCal URL. Paste the calendar URL from SocialSchedules > Settings > Calendar Sync.');
+    throw new Error('Invalid iCal URL. Paste your WhenToWork iCal link from the Calendar Sync section.');
   }
 
   let rawEvents;
@@ -35,10 +35,13 @@ async function parseSocialSchedulesFeed(icalUrl) {
     // Only include future events (confirmed upcoming shifts)
     if (end < now) continue;
 
-    // SocialSchedules uses STATUS:CONFIRMED for approved shifts
+    // WhenToWork usually uses "Assign:" prefix or specific status codes
     const status = (event.status || '').toUpperCase();
     const isConfirmed = !status || status === 'CONFIRMED' || status === 'TENTATIVE';
     if (!isConfirmed) continue;
+
+    // Filter out blockages/availability if they appear in the same feed
+    if (event.summary && (event.summary.includes('Block') || event.summary.includes('Unavailable'))) continue;
 
     schedules.push({
       id: event.uid || key,
@@ -60,8 +63,8 @@ async function parseSocialSchedulesFeed(icalUrl) {
 }
 
 function cleanTitle(title) {
-  // SocialSchedules sometimes prefixes titles with location/role info
-  return title.trim().replace(/\s+/g, ' ');
+  // WhenToWork often prefixes with "Assign: "
+  return title.replace(/^Assign:\s*/i, '').trim().replace(/\s+/g, ' ');
 }
 
 /**
@@ -71,8 +74,8 @@ function scheduleToCalendarEvent(schedule, timeZone = 'America/New_York') {
   return {
     title: schedule.title,
     description: schedule.description
-      ? `${schedule.description}\n\n[Auto-synced from SocialSchedules]`
-      : '[Auto-synced from SocialSchedules]',
+      ? `${schedule.description}\n\n[Auto-synced from WhenToWork]`
+      : '[Auto-synced from WhenToWork]',
     location: schedule.location,
     start: schedule.start,
     end: schedule.end,
@@ -81,6 +84,6 @@ function scheduleToCalendarEvent(schedule, timeZone = 'America/New_York') {
 }
 
 module.exports = {
-  parseSocialSchedulesFeed,
+  parseShiftFeed,
   scheduleToCalendarEvent,
 };

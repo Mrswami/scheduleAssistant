@@ -30,6 +30,10 @@
         "function": "api"
       },
       {
+        "source": "/demo/**",
+        "destination": "/demo/index.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
