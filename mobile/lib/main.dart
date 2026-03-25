@@ -85,8 +85,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   final List<Widget> _screens = [
     const AvailabilityScreen(),
     const ShiftsScreen(),
-    const Center(child: Text('Sync Service Active', style: TextStyle(color: Colors.white24))),
-    const Center(child: Text('Settings Managed by Admin', style: TextStyle(color: Colors.white24))),
+    const _SyncScreen(),
+    const _SettingsScreen(),
   ];
 
   @override
@@ -118,6 +118,91 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             BottomNavigationBarItem(icon: Icon(Icons.calendar_month_rounded), label: 'Shifts'),
             BottomNavigationBarItem(icon: Icon(Icons.sync_rounded), label: 'Sync'),
             BottomNavigationBarItem(icon: Icon(Icons.settings_rounded), label: 'Settings'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class _SyncScreen extends StatelessWidget {
+  const _SyncScreen();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1120),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.sync_rounded, color: Color(0xFF6366F1), size: 64),
+            const SizedBox(height: 24),
+            const Text('Manual Synchronization', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            Text('Syncing with WhenToWork Bridge...', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 14)),
+            const SizedBox(height: 40),
+            ElevatedButton.icon(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Syncing now...')));
+              },
+              icon: const Icon(Icons.refresh),
+              label: const Text('SYNC NOW'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF6366F1),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SettingsScreen extends StatelessWidget {
+  const _SettingsScreen();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1120),
+      body: ListView(
+        padding: const EdgeInsets.all(24),
+        children: [
+          const SizedBox(height: 48),
+          const Text('Settings', style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 32),
+          _buildToggle('Push Notifications', true),
+          _buildToggle('Sync Reminders', true),
+          _buildToggle('Calendar Integration', true),
+          const SizedBox(height: 48),
+          TextButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.logout, color: Color(0xFFFF4D4D)),
+            label: const Text('Log Out', style: TextStyle(color: Color(0xFFFF4D4D))),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildToggle(String label, bool value) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.03),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.white.withOpacity(0.05)),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(label, style: const TextStyle(color: Colors.white, fontSize: 16)),
+            Switch(value: value, onChanged: (v) {}, activeColor: const Color(0xFF6366F1)),
           ],
         ),
       ),
