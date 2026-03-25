@@ -63,7 +63,7 @@ class AvailabilityScreen extends ConsumerWidget {
                         padding: const EdgeInsets.only(bottom: 20.0),
                         child: _buildDayCard(preferences[index], index),
                       ),
-                      itemCount: preferences.length,
+                      childCount: preferences.length,
                     ),
                   ),
                 ),

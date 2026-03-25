@@ -41,7 +41,7 @@ class ShiftsScreen extends StatelessWidget {
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (context, index) => _buildShiftCard(context, index),
-                      itemCount: 5, // Placeholder for actual synced shifts
+                      childCount: 5, // Placeholder for actual synced shifts
                     ),
                   ),
                 ),
