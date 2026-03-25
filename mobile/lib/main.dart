@@ -124,8 +124,33 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     );
   }
 }
-class _SyncScreen extends StatelessWidget {
+class _SyncScreen extends StatefulWidget {
   const _SyncScreen();
+
+  @override
+  State<_SyncScreen> createState() => _SyncScreenState();
+}
+
+class _SyncScreenState extends State<_SyncScreen> {
+  bool _isSyncing = false;
+  bool _isSynced = false;
+
+  void _performSync() async {
+    setState(() => _isSyncing = true);
+    await Future.delayed(const Duration(seconds: 2)); // Simulate sync
+    if (mounted) {
+      setState(() {
+        _isSyncing = false;
+        _isSynced = true;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Sync Successful! Your calendar is up to date.'),
+          backgroundColor: Color(0xFF10B981),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +167,7 @@ class _SyncScreen extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withOpacity(0.2),
+                    color: (_isSynced ? const Color(0xFF10B981) : const Color(0xFF6366F1)).withOpacity(0.2),
                     blurRadius: 30,
                     spreadRadius: 5,
                   ),
@@ -156,23 +181,43 @@ class _SyncScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            const Text('CyberBee Sync Active', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+            Text(_isSynced ? 'CyberBee: Hives Aligned' : 'CyberBee Sync Active', 
+              style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
-            Text('Connected to WhenToWork Bridge', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 14)),
+            Text(_isSynced ? 'Success! Google Calendar is synchronized.' : 'Connected to WhenToWork Bridge', 
+              style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 14)),
             const SizedBox(height: 48),
-            ElevatedButton.icon(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Syncing now...')));
-              },
-              icon: const Icon(Icons.refresh),
-              label: const Text('SYNC NOW'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF6366F1),
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            if (!_isSynced) 
+              ElevatedButton.icon(
+                onPressed: _isSyncing ? null : _performSync,
+                icon: _isSyncing 
+                  ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                  : const Icon(Icons.refresh),
+                label: Text(_isSyncing ? 'SYNCING...' : 'SYNC NOW'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF6366F1),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                ),
+              )
+            else
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF10B981).withOpacity(0.12),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: const Color(0xFF10B981).withOpacity(0.2)),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.check_circle_rounded, color: Color(0xFF10B981), size: 18),
+                    SizedBox(width: 8),
+                    Text('SYNCED & SECURE', style: TextStyle(color: Color(0xFF10B981), fontWeight: FontWeight.w800, fontSize: 12)),
+                  ],
+                ),
               ),
-            ),
           ],
         ),
       ),
@@ -193,9 +238,11 @@ class _SettingsScreen extends StatelessWidget {
           const SizedBox(height: 48),
           const Text('Settings', style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
           const SizedBox(height: 32),
-          _buildToggle('Push Notifications', true),
-          _buildToggle('Sync Reminders', true),
-          _buildToggle('Calendar Integration', true),
+          _buildActionItem('Push Notifications', 'Tap to Request Permission', Icons.notifications_none_rounded, () {
+             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Permission Requested...')));
+          }),
+          _buildToggle('Sync Reminders', true, subtitle: '(Typically Sun @ 8 PM based on patterns)'),
+          _buildStatusItem('Calendar Integration', 'jmoreno@gmail.com', Icons.account_circle_outlined),
           const SizedBox(height: 48),
           TextButton.icon(
             onPressed: () {},
@@ -207,7 +254,7 @@ class _SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildToggle(String label, bool value) {
+  Widget _buildToggle(String label, bool value, {String? subtitle}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Container(
@@ -218,10 +265,82 @@ class _SettingsScreen extends StatelessWidget {
           border: Border.all(color: Colors.white.withOpacity(0.05)),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(label, style: const TextStyle(color: Colors.white, fontSize: 16)),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(label, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),
+                  if (subtitle != null)
+                    Text(subtitle, style: TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 11)),
+                ],
+              ),
+            ),
             Switch(value: value, onChanged: (v) {}, activeColor: const Color(0xFF6366F1)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildActionItem(String label, String value, IconData icon, VoidCallback onTap) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.03),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Colors.white.withOpacity(0.05)),
+          ),
+          child: Row(
+            children: [
+              Icon(icon, color: const Color(0xFF6366F1), size: 20),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(label, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),
+                    Text(value, style: TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 11)),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: Colors.white24, size: 16),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStatusItem(String label, String value, IconData icon) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.03),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.white.withOpacity(0.05)),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: const Color(0xFF6366F1), size: 20),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(label, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),
+                  Text(value, style: TextStyle(color: const Color(0xFF10B981).withOpacity(0.8), fontSize: 11, fontWeight: FontWeight.bold)),
+                ],
+              ),
+            ),
+            const Icon(Icons.link_rounded, color: Color(0xFF10B981), size: 16),
           ],
         ),
       ),
