@@ -120,6 +120,8 @@ class ShiftsScreen extends StatelessWidget {
     ];
     
     final shift = shiftData[index % shiftData.length];
+    
+    return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: Container(
         decoration: BoxDecoration(
