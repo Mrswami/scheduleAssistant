@@ -8,7 +8,7 @@ const {
   checkEventExists,
 } = require('../services/googleCalendar');
 const { parseShiftFeed, scheduleToCalendarEvent, parseScrapedShifts } = require('../services/icalParser');
-const { recordSync, saveUserSettings } = require('../services/firebase');
+const { recordSync } = require('../services/firebase');
 const { sendMessage } = require('../services/groupme');
 const { getTempShifts } = require('./schedules'); // We'll add this export
 

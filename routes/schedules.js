@@ -6,13 +6,6 @@ const { parseShiftFeed, parseScrapedShifts } = require('../services/icalParser')
 // don't travel between Extension (W2W) and Localhost (HTTP) easily.
 let tempScrapedShifts = null;
 
-function requireAuth(req, res, next) {
-  if (!req.session.tokens) {
-    return res.status(401).json({ error: 'Not authenticated. Please sign in with Google.' });
-  }
-  next();
-}
-
 // GET /api/schedules?url=<ical_url>
 // Fetch and parse SocialSchedules iCal feed
 router.get('/', async (req, res) => {

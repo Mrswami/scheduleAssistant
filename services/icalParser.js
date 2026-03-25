@@ -124,7 +124,7 @@ function parseW2WDateTime(dateStr, timePart) {
   const match = timePart.match(/(\d{1,2})(?::(\d{2}))?(am|pm)/i);
   if (!match) return d;
 
-  let [_, hours, mins, ampm] = match;
+  let [, hours, mins, ampm] = match;
   hours = parseInt(hours);
   mins = parseInt(mins || '0');
 

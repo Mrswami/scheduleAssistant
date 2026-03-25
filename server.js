@@ -9,7 +9,7 @@ initFirebase();
 
 const authRoutes = require('./routes/auth');
 const calendarRoutes = require('./routes/calendar');
-const { router: schedulesRoutes, getTempShifts } = require('./routes/schedules');
+const { router: schedulesRoutes } = require('./routes/schedules');
 const userRoutes = require('./routes/user');
 const groupMeRoutes = require('./routes/groupme');
 const syncRoutes = require('./routes/sync');

@@ -1,4 +1,8 @@
 module.exports = [
+    // Global ignores must be in their own object with NO other keys
+    {
+        ignores: ["public/**", "tests/**", "mobile/**", "build/**", "node_modules/**"]
+    },
     // Global settings
     {
         languageOptions: {
@@ -18,7 +22,6 @@ module.exports = [
     // Backend and general JS
     {
         files: ["**/*.js"],
-        ignores: ["public/**", "tests/**"],
         languageOptions: {
             globals: {
                 node: true,
@@ -48,6 +51,7 @@ module.exports = [
                 chrome: "readonly",
                 browser: "readonly",
                 AbortSignal: "readonly",
+                btoa: "readonly",
             }
         },
         rules: {
