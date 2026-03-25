@@ -48,7 +48,7 @@ router.get('/callback', async (req, res) => {
       const { getUser } = require('../services/firebase');
       const saved = await getUser(userInfo.data.id);
       if (saved?.settings?.icalUrl) req.session.icalUrl = saved.settings.icalUrl;
-    } catch (_) { }
+    } catch { }
 
     res.redirect('/?auth=success');
   } catch (err) {
