@@ -92,7 +92,11 @@
           <h1 id="main-title">My Work Shifts</h1>
           <p class="text-muted" id="main-subtitle">Manage your WhenToWork shifts and sync to Google Calendar.</p>
         </div>
-        <div id="header-actions">
+        <div id="header-actions" style="display: flex; align-items: center; gap: 1.5rem;">
+          <div id="assistant-peek" style="display: flex; align-items: center; gap: 0.75rem; background: rgba(99,102,241,0.1); padding: 0.5rem 1rem; border-radius: 12px; border: 1px solid rgba(99,102,241,0.2);">
+            <img src="https://img.icons8.com/color/48/bee.png" style="width: 24px; height: 24px;" alt="Bee" />
+            <span style="font-size: 0.8rem; font-weight: 600; color: #818cf8;">CyberBee: All systems synced</span>
+          </div>
           <button class="btn btn-primary" onclick="saveAndFetch()" id="btn-sync-now">
             Sync Now
           </button>

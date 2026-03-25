@@ -135,12 +135,31 @@ class _SyncScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.sync_rounded, color: Color(0xFF6366F1), size: 64),
-            const SizedBox(height: 24),
-            const Text('Manual Synchronization', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+            Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF6366F1).withOpacity(0.2),
+                    blurRadius: 30,
+                    spreadRadius: 5,
+                  ),
+                ],
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/assistant.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 32),
+            const Text('CyberBee Sync Active', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
-            Text('Syncing with WhenToWork Bridge...', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 14)),
-            const SizedBox(height: 40),
+            Text('Connected to WhenToWork Bridge', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 14)),
+            const SizedBox(height: 48),
             ElevatedButton.icon(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Syncing now...')));
