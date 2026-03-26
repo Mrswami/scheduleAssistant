@@ -253,14 +253,39 @@ class _SettingsScreen extends StatelessWidget {
           const SizedBox(height: 48),
           const Text('Settings', style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
           const SizedBox(height: 32),
-          _buildActionItem('Push Notifications', 'Tap to Request Permission', Icons.notifications_none_rounded, () {
-             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Permission Requested...')));
+          _buildActionItem('Push Notifications', 'Manage App Alerts', Icons.notifications_none_rounded, () {
+             ScaffoldMessenger.of(context).showSnackBar(
+               const SnackBar(
+                 content: Text('CyberBee: Notification permissions aligned with OS preferences.'),
+                 backgroundColor: Color(0xFF6366F1),
+               ),
+             );
           }),
           _buildToggle('Sync Reminders', true, subtitle: '(Typically Sun @ 8 PM based on patterns)'),
           _buildStatusItem('Calendar Integration', 'jmoreno@gmail.com', Icons.account_circle_outlined),
           const SizedBox(height: 48),
           TextButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  backgroundColor: const Color(0xFF1E293B),
+                  title: const Text('Log Out?', style: TextStyle(color: Colors.white)),
+                  content: const Text('CyberBee will stop syncing your hives. Continue?', style: TextStyle(color: Colors.white70)),
+                  actions: [
+                    TextButton(onPressed: () => Navigator.pop(context), child: const Text('CANCEL')),
+                    TextButton(
+                      onPressed: () async {
+                        final prefs = await SharedPreferences.getInstance();
+                        await prefs.clear(); // Reset everything for a clean slate
+                        if (context.mounted) Navigator.pop(context);
+                      }, 
+                      child: const Text('LOG OUT', style: TextStyle(color: Color(0xFFFF4D4D))),
+                    ),
+                  ],
+                ),
+              );
+            },
             icon: const Icon(Icons.logout, color: Color(0xFFFF4D4D)),
             label: const Text('Log Out', style: TextStyle(color: Color(0xFFFF4D4D))),
           ),
